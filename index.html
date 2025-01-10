@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天天开心~</title>
+    <link rel="stylesheet" href="file:///c:\Users\chen666666\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.15\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <link rel="icon" href="https://s21.ax1x.com/2024/12/31/pAz3s0A.png" type="image/x-png">
+      <link rel="shortcut icon" href="https://s21.ax1x.com/2024/12/31/pAz3s0A.png" type="image/x-png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: radial-gradient(ellipse at bottom, #040720, #111); */
+            overflow: hidden;
+        }
+        .night {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotateZ(40deg);
+        }
+        .star {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 4px;
+            background: linear-gradient(-45deg, #eaea059b, rgba(0, 0, 255, 0));
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px #eee608);
+            animation: tail 3s ease-in-out infinite,
+                       falling 3s ease-in-out infinite;
+        }
+        @keyframes tail {
+            0% {
+                width: 0;
+            }
+            30% {
+                width: 100px;
+            }
+            100% {
+                width: 0;
+            }
+        }
+        @keyframes falling {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(300px);
+            }
+        }
+        .star::before, .star::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 2px);
+            right: 0;
+            height: 4px; 
+            background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #d7e606, rgba(0, 0, 255, 0));
+            border-radius: 100%;
+            transform: translateX(50%) rotateZ(45deg);
+            animation: shining 3s ease-in-out infinite;
+        }
+        @keyframes shining {
+            0% {
+                width: 0;
+            }
+            50% {
+                width: 30px;
+            }
+            100% {
+                width: 0;
+            }
+        }
+        .star::after {
+            transform: translateX(50%) rotateZ(-45deg);
+        }
+        .star:nth-child(1) {
+            top: calc(50% + 110px);
+            left: calc(50% - 250px);
+            animation-delay: 1s;
+        }
+        .star:nth-child(1)::before, .star:nth-child(1)::after {
+            animation-delay: 1s;
+        }
+        .star:nth-child(2) {
+            top: calc(50% + 50px);
+            left: calc(50% - 450px);
+            animation-delay: 1.2s;
+        }
+        .star:nth-child(2)::before, .star:nth-child(2)::after {
+            animation-delay: 1.2s;
+        }
+        .star:nth-child(3) {
+            top: calc(50% + 400px);
+            left: calc(50% - 30px);
+            animation-delay: 1.4s;
+        }
+        .star:nth-child(3)::before, .star:nth-child(3)::after {
+            animation-delay: 1.4s;
+        }
+        .star:nth-child(4) {
+            top: calc(50% + 200px);
+            left: calc(50% + 400px);
+            animation-delay: 1.6s;
+        }
+        .star:nth-child(4)::before, .star:nth-child(4)::after {
+            animation-delay: 1.6s;
+        }
+        .star:nth-child(5) {
+            top: calc(50% + 50px);
+            left: calc(50% + 450px);
+            animation-delay: 1.8s;
+        }
+        .star:nth-child(5)::before, .star:nth-child(5)::after {
+            animation-delay: 1.8s;
+        }
+        .star:nth-child(6) {
+            top: calc(50% + 140px);
+            left: calc(50% - 410px);
+            animation-delay: 2.2s;
+        }
+        .star:nth-child(6)::before, .star:nth-child(6)::after {
+            animation-delay: 2.2s;
+        }
+        .star:nth-child(7) {
+            top: calc(50% - 245px);
+            left: calc(50% - 320px);
+            animation-delay: 1.8s;
+        }
+        .star:nth-child(7)::before, .star:nth-child(7)::after {
+            animation-delay: 1.8s;
+        }
+        .star:nth-child(8) {
+            top: calc(50% - 100px);
+            left: calc(50% - 200px);
+            animation-delay: 2.5s;
+        }
+        .star:nth-child(8)::before, .star:nth-child(8)::after {
+            animation-delay: 2.5s;
+        }
+        .star:nth-child(9) {
+            top: calc(50% - 430px);
+            left: calc(50% + 200px);
+            animation-delay: 2.0s;
+        }
+        .star:nth-child(9)::before, .star:nth-child(9)::after {
+            animation-delay: 2.0s;
+        }
+        .star:nth-child(10) {
+            top: calc(50% - 20px);
+            left: calc(50% + 550px);
+            animation-delay: 2.2s;
+        }
+        .star:nth-child(10)::before, .star:nth-child(10)::after {
+            animation-delay: 2.2s;
+        }
+        .star:nth-child(11) {
+            top: calc(50% - 520px);
+            left: calc(50% + 400px);
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(11)::before, .star:nth-child(11)::after {
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(12) {
+            top: calc(50% - 320px);
+            left: calc(50% + 200px);
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(12)::before, .star:nth-child(12)::after {
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(13) {
+            top: calc(50% + 620px);
+            left: calc(50% - 200px);
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(13)::before, .star:nth-child(13)::after {
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(14) {
+            top: calc(50% + 620px);
+            left: calc(50% - 500px);
+            animation-delay: 2.7s;
+        }
+        .star:nth-child(14)::before, .star:nth-child(14)::after {
+            animation-delay: 1.7s;
+        }
+
+
+
+
+        #container{
+            /* 100%窗口高度 */
+            height: 100vh;
+            transform: rotateZ(-40deg);
+        }
+        .bg{
+            /* 绝对定位 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .sun{
+            margin: 0;
+            padding: 0;
+            /* 绝对定位 水平垂直居中 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 600px;
+            height: 600px;
+            background-color: orange;
+            border-radius: 50%;
+        }
+        .moon{
+            margin: 0;
+            padding: 0;
+            /* 绝对定位 水平垂直居中 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* 计算得出月亮的位置 */
+            transform: translate(calc(-50% + -160px),calc(-50% + -180px));
+            width: 600px;
+            height: 600px;
+            /* 通过阴影绘制月亮 */
+            box-shadow: 160px 180px 0 cyan;
+            border-radius: 50%;
+        }
+        .sea{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 35%;
+            /* 背景模糊制造大海的感觉 */
+            backdrop-filter: blur(100px);
+            -webkit-backdrop-filter: blur(100px);
+            z-index: 100;
+        }
+        .sun,
+        .moon,
+        .sun-box,
+        .moon-box,
+        .bg{
+            /* 添加动画过渡 */
+            transition: all 1s ease-in-out;
+        }
+        .sun-box,
+        .moon-box{
+            /* 相对定位 */
+            /* position: absolute; */
+            position: relative;
+            /* 溢出隐藏 */
+            overflow: hidden;
+        }
+        /* 白天 */
+        .light .sun-box{
+            height: 100%;
+        }
+        .light .moon-box{
+            height: 0;
+        }
+        .light .bg{
+            background-color: #ffeea2;
+        }
+        /* 夜晚 */
+        .dark .sun-box{
+            height: 0;
+        }
+        .dark .moon-box{
+            height: 100%;
+        }
+        .dark .bg{
+            background-color: #040720;
+        }
+        /* 切换按钮样式 */
+        .btn-box{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 101;
+            display: flex;
+            flex-direction: row;
+        }
+        .btn-box div{
+            background: rgba(255,255,255,0.7);
+            color: #000;
+            width: 90px;
+            height: 40px;
+            line-height: 40px;
+            font-weight: bold;
+            text-align: center;
+            margin: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-box div:hover{
+            background: #fff;
+        }
+
+
+        h1 {
+            position: absolute;
+            font-family: KaiTi;
+            top: 80px;
+            left: 10px;
+            margin: 0;
+            padding: 0;
+            color: #040720;
+            font-size: 80px;
+            font-weight: normal;
+        }
+        h1 span {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            animation: faguangziti 2s linear infinite;
+        }
+
+        @keyframes faguangziti {
+            0%, 100%{
+                color: rgb(128, 234, 234);
+                /* filter: blur(2px); */
+                text-shadow: 0 0 10px rgb(170, 7, 235),
+                0 0 20px rgb(187, 12, 222);
+            }
+            70%, 95% {
+                color: #040720;
+                filter: blur(0px);
+                text-shadow: none;
+            }
+        }
+
+        .container1 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .bubbles
+        {
+            position: relative;
+            display: flex;
+        }
+        .bubbles span {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: #4fc3dc;
+            margin: 0 4px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px #4fc3dc44,
+            0 0 20px #4fc3dc,
+            0 0 50px #4fc3dc;
+            animation: yinghuochong 15s linear infinite;
+            animation-duration: calc(500s / var(--i));
+        }
+        .bubbles span:nth-child(even)
+        {
+            background: rgb(246, 214, 8);
+            box-shadow: 0 0 0 10px rgba(246, 214, 8, 0.615),
+            0 0 20px rgb(246, 214, 8),
+            0 0 50px rgb(246, 214, 8);
+        }
+        .bubbles span:nth-child(3n)
+        {
+            background: rgb(246, 8, 143);
+            box-shadow: 0 0 0 10px rgb(246, 8, 143),
+            0 0 20px rgb(246, 8, 143),
+            0 0 50px rgb(246, 8, 143);
+        }
+        @keyframes yinghuochong {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+            100% {
+                transform: translateY(-10vh) scale(0.2);
+            }
+        }
+
+
+        .wrap{
+            height: 110px;
+            position: absolute;
+            top: 2040px;
+            left: 710px;
+            transform: rotateX(-120deg) rotateZ(170deg);
+            transform-style: preserve-3d;
+            zoom: 0.3;
+        }
+        .wrap div {
+            transform-style: preserve-3d;
+        }
+        .wrap1{
+            height: 110px;
+            position: absolute;
+            top: 100px;
+            left: 2700px;
+            transform: rotateX(-120deg) rotateZ(280deg);
+            transform-style: preserve-3d;
+            zoom: 0.5;
+        }
+        .wrap1 div {
+            transform-style: preserve-3d;
+        }
+        .body {
+            position: absolute;
+            height: 100px;
+            width: 20px;
+            background: #333;
+            border-radius: 100%;
+            animation: ani .4s infinite linear;
+        }
+        @keyframes ani {
+            0%, 100% {
+                transform: rotateX(30deg) rotateY(90deg) translateX(0px) translateY(0px);
+            }
+            50% {
+                transform: rotateX(30deg) rotateY(90deg) translateX(5px) translateY(5px);
+            }
+        }
+        .left_wing {
+            left: 0px;
+            position: absolute;
+            --deg: -80deg;
+            --deg2: 30deg;
+            --tranX: 30px;
+            height: 200px;
+            animation: fly .8s infinite cubic-bezier(.48, .01, .54, 1);
+        }
+        @keyframes fly {
+            0%, 100% {
+                transform: translateZ(var(--tranX)) rotateX(30deg) rotateY(var(--deg));
+            }
+            50% {
+                transform: translateZ(var(--tranX)) rotateX(30deg) rotateY(var(--deg2));
+            }
+        }        
+        .left_wing::after {
+            content: '';
+            position: absolute;
+            right: 3px;
+            height: 70px;
+            width: 120px;
+            transform-origin: 100% 50%;
+            box-shadow: 0 0 30px #d7e606;
+            top: 20px;
+            border-radius: 100%;
+            transform: rotateZ(30deg);
+            background: rgba(80, 220, 255, 0.5);
+        }
+        .left_wing::before {
+            content: '';
+            position: absolute;
+            right: 3px;
+            height: 40px;
+            width: 80px;
+            transform-origin: 100% 50%;
+            box-shadow: 0 0 5px #d7e606;
+            top: 20px;
+            border-radius: 100%;
+            transform: rotateZ(-30deg);
+            background: rgba(80, 220, 255, 0.5);
+        }
+        .right_wing {
+            left: 20px;
+            position: absolute;
+            height: 100px;
+            --deg: 80deg;
+            --deg2: -30deg;
+            --tranX: -15px;
+            animation: fly 0.8s infinite cubic-bezier(0.48, 0.01, 0.54, 1);
+        }
+
+        .right_wing::after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            height: 70px;
+            width: 120px;
+            transform-origin: 0% 50%;
+            box-shadow: 0 0 30px #d7e606;
+            top: 20px;
+            border-radius: 100%;
+            transform: rotateZ(-30deg);
+            background: rgba(80, 220, 255, 0.5);
+        }
+        .right_wing::before {
+            content: '';
+            position: absolute;
+            left: 3px;
+            height: 40px;
+            width: 80px;
+            transform-origin: 0% 50%;
+            box-shadow: 0 0 5px #d7e606;
+            top: 20px;
+            border-radius: 100%;
+            transform: rotateZ(30deg);
+            background: rgba(80, 220, 255, 0.5);
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- 设置音乐 -->
+    <!-- <audio src="./yujian.mp3" autoplay controls></audio> -->
+
+    <div class="night">
+        <div class="dark" id="container">
+            <div class="bg"></div>
+            <div class="moon-box">
+                
+                <div class="moon">  
+                </div>
+                
+            </div>
+            <div class="sun-box">
+                
+                <div class="sun"></div>
+            </div>
+            
+            <div class="sea">
+                
+            </div>
+        </div>
+
+        <!-- 两只蝴蝶 -->
+        <div class="wrap" title="你好呀">
+            <div class="body"></div>
+            <div class="left_wing"></div>
+            <div class="right_wing"></div>
+        </div>
+
+
+        <div class="wrap1" title="祝xx天天开心~">
+            <div class="body"></div>
+            <div class="left_wing"></div>
+            <div class="right_wing"></div>
+        </div>
+
+
+        
+
+        
+
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>  
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <div class="btn-box">
+            
+        <div onclick="change('dark')" class="moonlight">
+            <i class="fa fa-sun-o" aria-hidden="true"></i> 哈哈哈哈
+        </div>
+        <div onclick="change('light')" class="sunShine cancelStar">
+            <i class="fa fa-moon-o" aria-hidden="true"></i> 啦啦啦啦
+        </div>
+    </div>
+
+
+    <div class="container1">
+        <div class="bubbles">
+            <span style="--i:35"></span>
+            <span style="--i:12"></span>
+            <span style="--i:14"></span>
+            <span style="--i:16"></span>
+            <span style="--i:21"></span>
+            <span style="--i:23"></span>
+            <span style="--i:20"></span>
+            <span style="--i:19"></span>
+            <span style="--i:17"></span>
+            <span style="--i:28"></span>
+            <span style="--i:25"></span>
+            <span style="--i:18"></span>
+            <span style="--i:20"></span>
+            <span style="--i:13"></span>
+            <span style="--i:23"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:29"></span>
+            <span style="--i:16"></span>
+            <span style="--i:29"></span>
+            <span style="--i:23"></span>
+            <span style="--i:20"></span>
+            <span style="--i:19"></span>
+            <span style="--i:17"></span>
+            <span style="--i:28"></span>
+            <span style="--i:25"></span>
+            <span style="--i:18"></span>
+            <span style="--i:30"></span>
+            <span style="--i:34"></span>
+            <span style="--i:32"></span>
+            <span style="--i:13"></span>
+            <span style="--i:23"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:29"></span>
+            <span style="--i:16"></span>
+            <span style="--i:29"></span>
+            <span style="--i:23"></span>
+            <span style="--i:20"></span>
+            <span style="--i:19"></span>
+            <span style="--i:17"></span>
+            <span style="--i:28"></span>
+            <span style="--i:25"></span>
+            <span style="--i:18"></span>
+            <span style="--i:30"></span>
+            <span style="--i:34"></span>
+            <span style="--i:32"></span>
+        </div>
+    </div>
+
+
+    <h1>
+        <span>❤</span> <span>晚安(≧▽≦)</span>
+    </h1>
+
+
+    <style>
+        h2 {
+            position: absolute;
+            font-family:华文行楷;
+            top: 510px;
+            left: 1050px;
+            margin: 0;
+            padding: 0;
+            color: rgba(246, 13, 238, 0.3);
+            font-size: 60px;
+            font-weight: normal;
+            /* z-index: 9999; */
+        }
+        h2.dierju {
+            top: 580px;
+
+        }
+        h2 div {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            height: 70px;
+            animation: faguangziti 0s linear infinite;
+        }
+    </style>
+    <h2>
+        <!-- <div>但愿人长久</div> -->
+        
+        
+    </h2>
+    <h2 class="dierju">
+        <!-- <div>&nbsp;&nbsp;千里共婵娟</div> -->
+    </h2>
+
+<style>
+    .cloud {
+        position: absolute;
+        top: 510px;
+        left: 500px;
+        transform: translateZ(30deg);
+        width: 240px;
+        height: 60px;
+        text-align: center;
+        background: pink;
+        border-radius: 100px;
+        transition: all 3s;
+        z-index: 999;
+        opacity: 0;
+    }
+    .cloud::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: pink;
+            border-radius: 50%;
+            box-shadow: 80px 0 0 40px pink;
+            
+        }
+    .cloud:hover {
+        transform: translateX(-200px);
+    }
+
+
+    .cloud2 {
+        position: absolute;
+        top: 490px;
+        left: 690px;
+        transform: translateZ(30deg);
+        width: 240px;
+        height: 60px;
+        text-align: center;
+        background: hotpink;
+        border-radius: 100px;
+        transition: all 2s;
+        z-index: 999;
+        opacity: 0;
+    }
+    .cloud2::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: hotpink;
+            border-radius: 50%;
+            box-shadow: 80px 0 0 40px hotpink;
+            
+        }
+    .cloud2:hover {
+        transform: translateX(200px);
+    }
+    
+</style>
+<div class="cloud"></div>
+<div class="cloud2"></div>
+
+
+<!-- let x = document.createElement("audio");
+     x.setAttribute("src", "qlx.mp3");
+     x.setAttribute("autoplay","autoplay"); -->
+
+
+    <script>
+
+
+        
+
+
+
+        let divStar = document.querySelectorAll('.star')
+        let cancelStar = document.querySelector('.cancelStar')
+        let sunShine = document.querySelector('.sunShine')
+        let moonlight = document.querySelector('.moonlight')
+        let yinghuochong = document.querySelectorAll('.bubbles span')
+        let butterfly = document.querySelector('.wrap')
+        let butterfly1 = document.querySelector('.wrap1')
+        
+        
+
+        let cloud = document.querySelector('.cloud')
+        let cloud2 = document.querySelector('.cloud2')
+        cloud.style.display = 'hide'   
+        cloud2.style.display = 'hide'   
+
+        
+
+        let faguangziti = document.querySelectorAll('h1 span')
+        let x = document.createElement("audio")
+        for(let i = 0;i < faguangziti.length; i++)
+            {
+                faguangziti[0].addEventListener('mouseenter', function() {
+                    faguangziti[0].style.cursor = 'pointer'
+                })
+                
+                faguangziti[0].addEventListener('click', function(){
+                    x.setAttribute("loop","loop")
+                x.setAttribute("autoplay","autoplay")
+                x.setAttribute("src", "yujian.mp3")
+                qt.pause(); // 停止音频播放
+                qt.removeAttribute("autoplay"); // 移除 autoplay 属性
+                qt.removeAttribute("loop"); // 移除 loop 属性
+                // 如果你想重置音频到开始位置，可以使用下面这行代码
+                qt.currentTime = 0;
+            })
+            }
+        
+
+        moonlight.style.color = 'rgb(99, 8, 235)'
+        moonlight.innerHTML = '❤~~~~'
+
+        // 开场先后次序
+        butterfly.style.display = 'none'
+        butterfly1.style.display = 'none'
+
+        for(let i = 0;i < faguangziti.length; i++)
+            {
+                faguangziti[i].style.display = 'none'
+            }
+        setTimeout(function(){
+                butterfly.style.display = 'block'
+            
+            }, 500)
+
+            setTimeout(function() {
+                
+            butterfly1.style.display = 'block'
+            }, 1000)
+            setTimeout(function() {
+                for(let i = 0;i < faguangziti.length; i++)
+            {
+                faguangziti[i].style.display = 'table-cell'
+            }
+            }, 1500)
+
+            
+
+            
+
+        sunShine.addEventListener('click', function() {
+            
+            cloud.style.opacity = 1
+            cloud2.style.opacity = 1
+            cloud2.addEventListener('mouseenter', function() {
+                cloud2.style.cursor = 'pointer'
+                })
+
+// 创建音频元素
+let qt = document.createElement("audio")
+        qt.src = "qingtian.ogg"; // 替换为你的音乐文件路径
+        qt.preload = "auto"; // 预加载
+
+        // 添加点击事件监听器到 cloud 元素
+        /* cloud.addEventListener('click', function(){  
+            qt.setAttribute("loop","loop")
+            qt.setAttribute("autoplay","autoplay")
+            qt.setAttribute("src", "qingtian.ogg")
+            }) */
+            cloud2.addEventListener('click', function(){
+            qt.setAttribute("loop","loop")
+            qt.setAttribute("autoplay","autoplay")
+            qt.setAttribute("src", "qingtian.ogg")
+            x.pause(); // 停止音频播放
+            x.removeAttribute("autoplay"); // 移除 autoplay 属性
+            x.removeAttribute("loop"); // 移除 loop 属性
+            // 如果你想重置音频到开始位置，可以使用下面这行代码
+            qt.currentTime = 0;
+            })
+
+            faguangziti[0].addEventListener('click', function(){
+                    x.setAttribute("loop","loop")
+                x.setAttribute("autoplay","autoplay")
+                x.setAttribute("src", "yujian.mp3")
+                qt.pause(); // 停止音频播放
+                qt.removeAttribute("autoplay"); // 移除 autoplay 属性
+                qt.removeAttribute("loop"); // 移除 loop 属性
+                // 如果你想重置音频到开始位置，可以使用下面这行代码
+                qt.currentTime = 0;
+            })
+
+            butterfly.style.display = 'none'
+            butterfly1.style.display = 'none'
+            for(let i = 0;i < yinghuochong.length; i++)
+            {
+                yinghuochong[i].style.display = 'none'
+            }
+            for(let i = 0;i < faguangziti.length; i++)
+            {
+                faguangziti[i].style.display = 'none'
+            }
+            sunShine.innerHTML = '❤xyz'
+            moonlight.innerHTML = '代数几何'
+            for(let i = 0;i < divStar.length; i++)
+            {
+                divStar[i].style.display = 'none'
+            }
+            for(let i = 0;i < faguangziti.length; i++)
+            {
+                setTimeout(function() {
+                    
+                    cloud.style.display = 'block'
+                    
+                    faguangziti[i].style.display = 'none'
+                }, 1000)
+                setTimeout(function() {
+                    cloud2.style.display = 'block'
+                }, 2000)
+                setTimeout(qipaowenzi, 3000)
+                
+            }
+            
+            moonlight.style.color = '#000'
+            sunShine.style.color = 'hotpink'
+        })
+
+        moonlight.addEventListener('click', function() {
+
+            cloud.style.display = 'none'
+            cloud2.style.display = 'none'
+            
+
+            setTimeout(function() {
+                butterfly.style.display = 'block'
+                cloud.style.display = 'none'
+            cloud2.style.display = 'none'
+            }, 1000)
+
+            setTimeout(function() {
+                
+            butterfly1.style.display = 'block'
+            }, 2000)
+
+            
+            for(let i = 0;i < yinghuochong.length; i++)
+            {
+                yinghuochong[i].style.display = 'inline'
+            }
+            for(let i = 0;i < faguangziti.length; i++)
+            {
+                setTimeout(function() {
+                    faguangziti[i].style.display = 'table-cell'
+                }, 800)
+                
+            }
+            moonlight.innerHTML = '❤abcde'
+            sunShine.innerHTML = '代数几何'
+            for(let i = 0;i < divStar.length; i++)
+            {
+                divStar[i].style.display = 'flex'
+            }
+ 
+            sunShine.style.color = '#000'
+            moonlight.style.color = 'rgb(99, 8, 235)'
+        })
+
+
+
+
+        
+       
+    </script>
+
+    
+    <script>
+        function change(str){
+            document.getElementById('container').setAttribute('class', str);
+        }
+    </script>
+
+<style>
+    canvas {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<canvas id="canvas" width="1000" height="1000"></canvas>
+
+<style>
+    h3 {
+        /* height: 500px; */
+        /* width: 2000px; */
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        font-size: 200px;
+  /* font-weight: 900; */
+  animation: zhankai 2.5s ease-in-out alternate infinite;
+
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+
+  font-family: 楷体;
+  color: transparent; 
+  user-select: none;
+  z-index: 9999;
+    }
+    h3 div {
+        height: 250px;
+    }
+    /* h3 span:nth-child(2){
+        position: absolute;
+        top: 100px;
+    } */
+    @keyframes zhankai {
+            0% {
+                letter-spacing: -0.5em;
+                opacity: 0;
+            }
+            40% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+</style>
+    <h3 class="yangguangmingmeiWord">
+        <div>❤❤❤❤</div>
+        <!-- <br> -->
+        <div>❤❤❤❤</div>
+        <!-- <br> -->
+        <div>❤❤❤❤</div>
+    </h3>
+
+    <script>
+        let suofangwenzi = document.querySelector('h3')
+        suofangwenzi.addEventListener('click', function() {
+            suofangwenzi.style.height = 500+'px'
+
+            suofangwenzi.style.top = 150+'px'
+
+        })
+        
+    </script>
+
+<script>
+    let canvas = document.querySelector('canvas')
+    let yangguangmingmeiWord = document.querySelector('.yangguangmingmeiWord')
+    yangguangmingmeiWord.style.display = 'none'
+    canvas.style.display = 'none'
+
+
+    sunShine.addEventListener('click', function() {
+        setTimeout(function() {
+            yangguangmingmeiWord.style.display = 'block'
+            canvas.style.display = 'flex'
+        }, 1000)
+
+        
+        
+    })
+
+    moonlight.addEventListener('click', function() {
+        canvas.style.display = 'none'
+        yangguangmingmeiWord.style.display = 'none'
+
+    })
+
+        let ctx = canvas.getContext('2d')
+        // 设置画布尺寸覆盖整个页面
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+
+
+        canvas.addEventListener('click', function(){
+            suofangwenzi.style.height = 500+'px'
+
+            suofangwenzi.style.top = 150+'px'
+ 
+        })
+
+        // 定义生成随机数的函数
+        function ran(num)
+        {
+            return Math.random() * num
+        }
+
+        function qipaowenzi() {
+            let qipao = new Path2D()
+            let x = 1100
+            let y = 300
+            qipao.moveTo(x,y)
+            qipao.quadraticCurveTo(x-50,y,x-50,y-100)
+            qipao.quadraticCurveTo(x-50,y-200,x+100,y-200)
+            qipao.quadraticCurveTo(x+250,y-200,x+250,y-100)
+            qipao.quadraticCurveTo(x+250,y,x+50,y)
+            qipao.quadraticCurveTo(x+50,y+80,x-50,y+50)
+            qipao.quadraticCurveTo(x,y+50,x,y)
+            ctx.fillStyle = 'rgba(40, 232, 249, 0.2)'
+            ctx.fill(qipao)
+            // 设置文字大小与字体
+            ctx.font = '50px 楷体'
+            // 设置对齐方式
+            ctx.textAlign = 'center'
+            // 设置实心文字颜色
+            ctx.fillStyle = 'blue'
+            // 绘制实心文字:  
+            ctx.fillText("早上好呀😄", x + 100, y - 80, 300)
+            ctx.stroke() 
+        }
+        
+        const mouse = {};
+        // 点击或鼠标移动时往数组添加新的粒子对象
+        function addNewParticles(e) {
+        mouse.x = e.x;
+        mouse.y = e.y;
+        Array.apply(null, { length: 2 }).forEach(() => {
+        particlesArray.push(new Particle());
+        });
+        }
+
+
+        canvas.addEventListener('mousemove', addNewParticles);
+        canvas.addEventListener('click', addNewParticles);
+        const particlesArray = [];
+        let hue = 0; // 色相
+        class Particle {
+            constructor() {
+            this.x = mouse.x;
+            this.y = mouse.y;
+            this.size = Math.random() * 5 + 1;
+            this.speedX = Math.random() * 3 - 1.5; // -1.5 ~ 1.5,如果是负数往左边移动，正数往右边移动，speedY同理
+            this.speedY = Math.random() * 3 - 1.5;
+            }
+            update() {
+            this.size -= 0.1; // 圆半径逐渐变小
+            this.x += this.speedX; // 更新圆坐标
+            this.y += this.speedY;
+            }
+            draw() {
+            ctx.beginPath();
+            ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.closePath();
+            }
+            drawHeart() {
+            let r = this.r
+            let x = this.x
+            let y = this.y 
+            ctx.beginPath()
+            ctx.fillStyle = `hsl(${hue}, 100%, 50%)`
+            // ctx.lineWidth = 1
+            ctx.strokeStyle = `rgb(255,${ran(255)},${ran(255)})`
+            ctx.moveTo(x, y)
+            ctx.bezierCurveTo(x + r, y - r, x + 2 * r, y, x, y + 1.4 * r)
+            ctx.bezierCurveTo(x - 2 * r, y, x - r, y - r, x, y)
+            ctx.fill()
+            ctx.stroke()
+            ctx.closePath();
+        }
+        }
+        
+
+        function handleParticles() {
+        for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        if (particlesArray[i].size <= 0.3) { // 删除半径太小的粒子
+        particlesArray.splice(i, 1);
+        i--;
+        }
+        }
+        }
+
+        function handleParticlesHeart() {
+        for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].drawHeart();
+        if (particlesArray[i].size <= 0.3) { // 删除半径太小的粒子
+        particlesArray.splice(i, 1);
+        i--;
+        }
+        }
+    }
+
+
+        function animateIce() {
+        // ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        // ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        hue++;
+        handleParticles();
+        requestAnimationFrame(animateIce);
+        }
+
+        function animateHeart() {
+        // ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        // ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        hue++;
+        handleParticlesHeart();
+        requestAnimationFrame(animateHeart);
+        }
+
+
+        
+        function drawCircle() {
+        ctx.beginPath();
+        ctx.fillStyle = 'blue';
+        ctx.arc(10, 10, 10, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+        }
+
+        // animateIce();
+        // animateIce()
+        butterfly.setAttribute('title', '你的标题文本')
+        butterfly1.setAttribute('title', '你的标题文本')
+        
+</script>
+
+</body>
+</html>
